@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nøbødy x All Røunder - Premium Gift Cards</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white min-h-screen font-sans antialiased relative">
+
+    <!-- Navbar -->
+    <nav class="border-b border-slate-800/80 p-5 bg-slate-950/60 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="font-black text-2xl tracking-wider bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                NØBØDY x ALL RØUNDER
+            </span>
+            <div class="flex items-center gap-2 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
+                <span class="animate-pulse text-emerald-400">●</span>
+                <span class="text-sm font-medium text-slate-300">Store Active</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-16 text-center">
+        <!-- Hero Section -->
+        <div class="mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+                Premium <span class="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Gift Cards</span>
+            </h1>
+            <p class="text-slate-400 max-w-md mx-auto text-sm md:text-base">
+                Unlock exclusive digital gift cards and vouchers from your favorite brands instantly.
+            </p>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Amazon -->
+            <div class="group bg-gradient-to-br from-orange-600/90 to-amber-700/90 p-6 rounded-2xl text-left shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-orange-500/10 border border-orange-500/20 flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4 bg-white/10 w-12 h-12 flex items-center justify-center rounded-xl backdrop-blur-sm">🛒</div>
+                    <h3 class="font-bold text-2xl mb-1">Amazon</h3>
+                    <p class="text-xs text-orange-200/80 mb-4">Instant Digital Delivery</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-black mb-5 tracking-tight">&#8377;999</p>
+                    <button onclick="openPaymentModal('Amazon', '999')" class="w-full bg-white text-slate-950 font-bold py-3 rounded-xl transition-colors group-hover:bg-amber-300 shadow-md">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Flipkart -->
+            <div class="group bg-gradient-to-br from-blue-600/90 to-indigo-800/90 p-6 rounded-2xl text-left shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/10 border border-blue-500/20 flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4 bg-white/10 w-12 h-12 flex items-center justify-center rounded-xl backdrop-blur-sm">🛍️</div>
+                    <h3 class="font-bold text-2xl mb-1">Flipkart</h3>
+                    <p class="text-xs text-blue-200/80 mb-4">Shopping Voucher</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-black mb-5 tracking-tight">&#8377;799</p>
+                    <button onclick="openPaymentModal('Flipkart', '799')" class="w-full bg-white text-slate-950 font-bold py-3 rounded-xl transition-colors group-hover:bg-amber-300 shadow-md">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Google Play -->
+            <div class="group bg-gradient-to-br from-emerald-600/90 to-teal-800/90 p-6 rounded-2xl text-left shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-emerald-500/10 border border-emerald-500/20 flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4 bg-white/10 w-12 h-12 flex items-center justify-center rounded-xl backdrop-blur-sm">🎮</div>
+                    <h3 class="font-bold text-2xl mb-1">Google Play</h3>
+                    <p class="text-xs text-emerald-200/80 mb-4">Apps & Games Redeem</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-black mb-5 tracking-tight">&#8377;499</p>
+                    <button onclick="openPaymentModal('Google Play', '499')" class="w-full bg-white text-slate-950 font-bold py-3 rounded-xl transition-colors group-hover:bg-amber-300 shadow-md">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Zomato -->
+            <div class="group bg-gradient-to-br from-rose-600/90 to-red-800/90 p-6 rounded-2xl text-left shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-rose-500/10 border border-rose-500/20 flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4 bg-white/10 w-12 h-12 flex items-center justify-center rounded-xl backdrop-blur-sm">🍔</div>
+                    <h3 class="font-bold text-2xl mb-1">Zomato</h3>
+                    <p class="text-xs text-rose-200/80 mb-4">Food & Dining Credits</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-black mb-5 tracking-tight">&#8377;299</p>
+                    <button onclick="openPaymentModal('Zomato', '299')" class="w-full bg-white text-slate-950 font-bold py-3 rounded-xl transition-colors group-hover:bg-amber-300 shadow-md">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Payment Modal (Popup) -->
+    <div id="paymentModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl max-w-sm w-full text-center relative shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-lg">✕</button>
+            
+            <h3 class="text-xl font-bold mb-1" id="modalTitle">Checkout</h3>
+            <p class="text-amber-400 font-extrabold text-2xl mb-4" id="modalPrice">&#8377;0</p>
+            
+            <!-- QR Code Image Link -->
+            <div class="bg-slate-950 p-2 rounded-2xl border border-slate-800 inline-block mb-4 overflow-hidden">
+                <!-- Verbatim file link used here -->
+                <img src="1000002241.png" alt="Scan and Pay QR" class="w-64 h-auto mx-auto rounded-xl">
+            </div>
+
+            <p class="text-xs text-rose-400 font-semibold mb-4 animate-pulse">⚠️ Send screenshot after payment. Do not fake payment.</p>
+
+            <!-- Details & Quick Links -->
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between items-center bg-slate-950 px-4 py-2 rounded-xl border border-slate-800">
+                    <span class="text-slate-400 text-xs">UPI ID:</span>
+                    <span class="font-mono font-medium text-amber-400">bhartisargam@fam</span>
+                </div>
+                <a href="https://t.me/anandsingh766" target="_blank" class="flex justify-between items-center bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl text-white font-medium transition-colors">
+                    <span>Contact Telegram</span>
+                    <span class="text-xs">@anandsingh766 →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/60 mt-20 py-8 text-center text-sm text-slate-500">
+        <p>© 2026 Nøbødy x All Røunder. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Handle Popup -->
+    <script>
+        function openPaymentModal(cardName, price) {
+            document.getElementById('modalTitle').innerText = cardName + " Gift Card";
+            document.getElementById('modalPrice').innerHTML = "&#8377;" + price;
+            
+            const modal = document.getElementById('paymentModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePaymentModal() {
+            const modal = document.getElementById('paymentModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            const modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                closePaymentModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
